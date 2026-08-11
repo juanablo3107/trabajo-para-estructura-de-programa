@@ -32,29 +32,29 @@ def sistema_iluminacion():
                         suma_luz += nivel_luz
                         contador_mediciones += 1
                         medicion_evaluada = False  # Hay una nueva medición sin evaluar
-                        print(f"✅ Nivel de luz ({nivel_luz}) registrado exitosamente.")
+                        print(f"Nivel de luz ({nivel_luz}) registrado exitosamente.")
                         break
                     else:
-                        print("⚠️ Error: El valor debe estar en el rango de 0 a 1000.")
+                        print("Error: El valor debe estar en el rango de 0 a 1000.")
                 except ValueError:
-                    print("⚠️ Error: Debes ingresar un valor numérico válido.")
+                    print("Error: Debes ingresar un valor numérico válido.")
 
         elif opcion == '2':
             if nivel_luz is None:
-                print("⚠️ Error: Aún no has registrado ningún nivel de luz (Ve a la Opción 1).")
+                print("Error: Aún no has registrado ningún nivel de luz (Ve a la Opción 1).")
             else:
                 if not medicion_evaluada:
                     if nivel_luz < umbral_luz:
-                        print("💡 Lámpara activada")
+                        print("Lámpara activada")
                         contador_activaciones += 1
                     else:
-                        print("🌑 Lámpara apagada")
+                        print("Lámpara apagada")
                     medicion_evaluada = True
                 else:
                     if nivel_luz < umbral_luz:
-                        print("💡 La lámpara ya se encontraba activada con el último registro.")
+                        print("La lámpara ya se encontraba activada con el último registro.")
                     else:
-                        print("🌑 La lámpara ya se encontraba apagada con el último registro.")
+                        print("La lámpara ya se encontraba apagada con el último registro.")
 
         elif opcion == '3':
             print("\n--- Estadísticas de Iluminación ---")
@@ -76,7 +76,7 @@ def sistema_iluminacion():
             break
 
         else:
-            print("⚠️ Opción no válida. Por favor, selecciona un número del 1 al 4.")
+            print("Opción no válida. Por favor, selecciona un número del 1 al 4.")
 
 
 if __name__ == "__main__":
